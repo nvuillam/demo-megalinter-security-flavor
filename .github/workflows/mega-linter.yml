@@ -55,6 +55,7 @@ jobs:
             mega-linter.log
 
       - name: Upload Trivy scan results to GitHub Security tab
+        if: ${{ success() }} || ${{ failure() }}
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: 'megalinter-reports/mega-linter-report.sarif'
