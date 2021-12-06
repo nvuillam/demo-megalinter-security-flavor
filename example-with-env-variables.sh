@@ -1,7 +1,7 @@
 # Example about how to call security flavor with bandit and variables
 
-# ROOT_FOLDER=$PWD
-ROOT_FOLDER="c:/git/demo-megalinter-security-flavor" # If run on windows, replace $PWD by absolute path of the repository root
+ROOT_FOLDER=$PWD
+# ROOT_FOLDER="c:/git/demo-megalinter-security-flavor" # If run on windows, replace $PWD by absolute path of the repository root
 DOCKER_IMAGE="megalinter/megalinter-security:v6-alpha"
 echo "Renaming .mega-linter.yml file so it is ignored by MegaLinter"
 mv "$ROOT_FOLDER/.mega-linter.yml" "$ROOT_FOLDER/.mega-linter.ignored"
