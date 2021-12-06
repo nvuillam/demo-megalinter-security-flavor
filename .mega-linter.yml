@@ -4,6 +4,8 @@
 APPLY_FIXES: none # all, none, or list of linter keys
 DEFAULT_BRANCH: main # Usually master or main
 SHOW_ELAPSED_TIME: true
+PRINT_ALPACA: false
+FLAVOR_SUGGESTIONS: false
 TEXT_REPORTER: true
 SARIF_REPORTER: true
 UPDATED_SOURCES_REPORTER: false
