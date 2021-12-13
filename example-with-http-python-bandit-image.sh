@@ -5,6 +5,7 @@ START_TIME=$(date +%s%N)
 ROOT_FOLDER="c:/git" # Always put an absolute path here
 DOCKER_IMAGE="megalinter/megalinter-only-python_bandit:v6-alpha"
 LINTER_NAME="PYTHON_BANDIT"
+WORKSPACE_TO_LINT="demo-megalinter-security-flavor"
 
 # REMOVE PREVIOUS TEST CONTAINERS
 echo "Removing previous tests containers..."
@@ -38,3 +39,14 @@ echo "MegaLinter server docker image $DOCKER_IMAGE has started in $ELAPSED ms"
 echo ""
 docker ps
 
+# Make first curl just to check server is running
+START_TIME=$(date +%s%N)
+curl http://127.0.0.1:1984/lint_request
+ELAPSED=$((($(date +%s%N) - $START_TIME)/1000000))
+echo "GET processed in $ELAPSED ms"
+
+# Request lint
+START_TIME=$(date +%s%N)
+curl -d "{ \"workspace\": \"/tmp/lint/${WORKSPACE_TO_LINT}\" }" -H "Content-Type: application/json" -X POST http://127.0.0.1:1984/lint_request
+ELAPSED=$((($(date +%s%N) - $START_TIME)/1000000))
+echo "LINT processed in $ELAPSED ms"
