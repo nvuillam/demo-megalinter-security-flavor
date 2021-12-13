@@ -8,7 +8,7 @@ LINTER_NAME="PYTHON_BANDIT"
 
 # REMOVE PREVIOUS TEST CONTAINERS
 echo "Removing previous tests containers..."
-docker rm --force $(docker ps --filter name=megalinter -q) || true
+docker rm --force $(docker ps --filter name=megalinter-server-PYTHON_BANDIT -q) || true
 echo ""
 # docker container prune --filter name=megalinter-sshd --force
 
@@ -21,7 +21,13 @@ docker pull "$DOCKER_IMAGE"
 # MEGALINTER_SERVER is important,  so entrypoint.sh just runs flask server
 # Remove -d if you want to see that the server if well started
 echo "Starting MegaLinter container with volume $ROOT_FOLDER, using docker image $DOCKER_IMAGE..."
-docker run -p 1984:80 --name "megalinter-server-$LINTER_NAME" -v "$ROOT_FOLDER:/tmp/lint" -e MEGALINTER_SERVER="true" -d "$DOCKER_IMAGE"
+docker run \
+       -p 1984:80 \
+       --name "megalinter-server-$LINTER_NAME" \
+       -v "$ROOT_FOLDER:/tmp/lint" \
+       -e MEGALINTER_SERVER="true" \
+       -d \
+       "$DOCKER_IMAGE"
 
 # STATS
 echo ""
