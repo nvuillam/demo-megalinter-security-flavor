@@ -41,4 +41,8 @@ echo ""
 docker ps
 echo ""
 
-
+echo "- Connect via ssh: ssh root@localhost -p 1984"
+echo "- input password 'root'"
+echo "- run tmux"
+echo "- run printenv: Dockerfile env variables are visible"
+echo "- run DEFAULT_WORKSPACE=/tmp/lint/${WORKSPACE_TO_LINT} python -m megalinter.run"
