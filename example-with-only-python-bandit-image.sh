@@ -1,3 +1,4 @@
+#!/bin/bash
 # Example about how to call python bandit using its single-linter megalinter docker image
 START_TIME=$(date +%s%N)
 

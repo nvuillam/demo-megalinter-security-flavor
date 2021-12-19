@@ -1,3 +1,4 @@
+#!/bin/bash
 # Example about how to call security flavor with bandit, using local repo .mega-linter.yml config,
 # and force an unique linter to be run with ENABLE_LINTERS variable
 

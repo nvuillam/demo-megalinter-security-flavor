@@ -1,3 +1,4 @@
+#!/bin/bash
 # Example about how to call python bandit using its single-linter megalinter docker image
 
 # DEFINE SCRIPT VARIABLES (you can do the same in your script)
@@ -8,7 +9,7 @@ WORKSPACE_TO_LINT="demo-megalinter-security-flavor" #name of the folder you want
 
 # REMOVE PREVIOUS TEST CONTAINERS
 echo "Removing previous tests containers..."
-docker rm --force $(docker ps --filter name=megalinter-server-PYTHON_BANDIT -q) || true
+docker rm --force "$(docker ps --filter name=megalinter-server-PYTHON_BANDIT -q)" || true
 echo ""
 # docker container prune --filter name=megalinter-sshd --force
 

@@ -1,3 +1,4 @@
+#!/bin/bash
 # Example about how to call security flavor with bandit and variables
 
 ROOT_FOLDER=$PWD
