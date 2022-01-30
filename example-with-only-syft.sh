@@ -5,7 +5,7 @@ START_TIME=$(date +%s%N)
 # DEFINE SCRIPT VARIABLES (you can do the same in your script)
 # ROOT_FOLDER=$PWD
 ROOT_FOLDER="c:/git/demo-megalinter-security-flavor" # If run on windows, replace $PWD by absolute path of the repository root
-DOCKER_IMAGE="megalinter/megalinter-only-repository_syft:v6-syft"
+DOCKER_IMAGE="megalinter/megalinter-only-repository_syft:v6-alpha"
 DATE_TIME=$(date '+%Y%m%d%H%M')
 SARIF_REPORTER_FILE_NAME="megalinter-report-$DATE_TIME.sarif"
 
