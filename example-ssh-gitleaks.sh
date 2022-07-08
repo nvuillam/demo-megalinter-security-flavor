@@ -5,7 +5,7 @@
 ROOT_FOLDER="C:/git" # Always put an absolute path here. Must be the root of all your repositories
 LOCAL_SSH_FOLDER="C:/Users/33614/.ssh"
 LOCAL_REPORTS_FOLDER="C:/Users/33614/.megaLinter-reports"
-DOCKER_IMAGE="megalinter/megalinter-only-python_bandit:v6_retrofit_v5"
+DOCKER_IMAGE="megalinter/megalinter-only-repository_gitleaks:v6-alpha"
 LINTER_NAME="PYTHON_BANDIT"
 WORKSPACE_TO_LINT="demo-megalinter-security-flavor" #name of the folder you want to lint within root folder
 

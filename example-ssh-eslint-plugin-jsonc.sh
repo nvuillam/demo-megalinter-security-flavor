@@ -5,14 +5,14 @@
 ROOT_FOLDER="C:/git" # Always put an absolute path here. Must be the root of all your repositories
 LOCAL_SSH_FOLDER="C:/Users/33614/.ssh"
 LOCAL_REPORTS_FOLDER="C:/Users/33614/.megaLinter-reports"
-DOCKER_IMAGE="megalinter/megalinter-only-python_bandit:v6_retrofit_v5"
-LINTER_NAME="PYTHON_BANDIT"
+DOCKER_IMAGE="megalinter/megalinter-only-json_eslint_plugin_jsonc:v6-alpha"
+LINTER_NAME="JSON_ESLINT_PLUGIN_JSONC"
 WORKSPACE_TO_LINT="demo-megalinter-security-flavor" #name of the folder you want to lint within root folder
 
 set -eu
 # REMOVE PREVIOUS TEST CONTAINERS
 echo "Removing previous tests containers..."
-docker rm --force "$(docker ps --all --filter name=megalinter-ssh-PYTHON_BANDIT -q)" || true
+docker rm --force "$(docker ps --all --filter name=megalinter-ssh-JSON_ESLINT_PLUGIN_JSONC -q)" || true
 echo ""
 # docker container prune --filter name=megalinter-sshd --force
 
