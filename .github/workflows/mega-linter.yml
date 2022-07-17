@@ -33,7 +33,7 @@ jobs:
 
       # MegaLinter
       - name: MegaLinter
-        id: ml
+        id: ml 
         # You can override MegaLinter flavor used to have faster performances
         # More info at https://oxsecurity.github.io/megalinter/flavors/
         uses: oxsecurity/megalinter@test-bugs-sarif
