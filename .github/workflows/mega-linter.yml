@@ -3,11 +3,7 @@
 # More info at https://oxsecurity.github.io/megalinter
 name: MegaLinter
 
-on:
-  # Trigger mega-linter at every push. Action will also be visible from Pull Requests to master
-  push: # Comment this line to trigger action only on pull-requests (not recommended if you don't pay for GH Actions)
-  pull_request:
-    branches: [master, main]
+on: [push, pull_request]
 
 env: # Comment env block if you do not want to apply fixes
   # Apply linter fixes configuration
@@ -33,7 +29,7 @@ jobs:
 
       # MegaLinter
       - name: MegaLinter
-        id: ml 
+        id: ml
         # You can override MegaLinter flavor used to have faster performances
         # More info at https://oxsecurity.github.io/megalinter/flavors/
         uses: oxsecurity/megalinter@test-bugs-sarif
@@ -58,4 +54,4 @@ jobs:
         if: ${{ success() }} || ${{ failure() }}
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: 'megalinter-reports/megalinter-report.sarif'
+          sarif_file: "megalinter-reports/megalinter-report.sarif"
